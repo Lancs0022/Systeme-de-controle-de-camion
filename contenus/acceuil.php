@@ -43,7 +43,7 @@
                                             <h3 class="card-title">Camions</h3>
 
                                             <div class="card-tools">
-                                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <button type="button" class="btn btn-tool" data-card-widget="collapse" href="">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
                                             </div>

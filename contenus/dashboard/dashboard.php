@@ -14,17 +14,6 @@
                 <div class="col-sm-6">
                     <h1><?=$_SESSION['choix']?></h1>
                 </div>
-                <!-- <div class="btn-group btn-group-toggle col-sm-6" data-toggle="buttons">
-                  <label class="btn bg-olive active">
-                    <input type="radio" name="options" id="option_b1" autocomplete="off" checked=""> Active
-                  </label>
-                  <label class="btn bg-olive">
-                    <input type="radio" name="options" id="option_b2" autocomplete="off"> Radio
-                  </label>
-                  <label class="btn bg-olive">
-                    <input type="radio" name="options" id="option_b3" autocomplete="off"> Radio
-                  </label>
-                </div> -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>

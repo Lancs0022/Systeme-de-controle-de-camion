@@ -8,6 +8,6 @@
     include ("html/navSuperieur.html");
     include ("html/sideBar.html");
 
-    include ("controleur/chooser.php");
+    include ("route/route.php");
 
     include ("html/footer.html");
