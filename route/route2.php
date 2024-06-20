@@ -36,7 +36,6 @@
                 unset($_SESSION["ind"]);
             }
             else if($_SESSION["ind"] == "employes"){
-                include("contenus/navEmployes.html");
                 include("contenus/consult/consultEmployes.html");
                 unset($_SESSION["ind"]);
             }
@@ -50,6 +49,10 @@
             }
             else if($_SESSION["ind"] == "voyage"){
                 include("contenus/consult/consultVoyage.html");
+                unset($_SESSION["ind"]);
+            }
+            else if($_SESSION["ind"] == "maintenance"){
+                include("contenus/consult/consultMaintenance.html");
                 unset($_SESSION["ind"]);
             }
             else{
