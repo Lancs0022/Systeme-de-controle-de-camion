@@ -3,7 +3,7 @@
         $_SESSION["choix"] = $_GET["choix"];
 
     if(isset($_SESSION["choix"]) && 
-    ($_SESSION["choix"] == 'ajouter' || $_SESSION["choix"] == 'consulter')) {
+    ($_SESSION["choix"] == 'ajouter' || $_SESSION["choix"] == 'consulter' || $_SESSION["choix"] == "modifier")) {
         $choix = $_SESSION["choix"];
         include("contenus/ajout/main.php");
         unset($_SESSION["choix"]);

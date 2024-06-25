@@ -1,6 +1,14 @@
+<?php
+include("controler/bdd.php");
+$db = new Database();
+
+$camions = $db->select2("*", "Camion");
+$db->close();
+?>
+
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">DataTable with default features</h3>
+        <h3 class="card-title">DataTable avec des fonctionnalités par défaut</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -11,7 +19,6 @@
                         aria-describedby="example1_info">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Numéro</th>
                                 <th>Remorque</th>
                                 <th>Marque</th>
@@ -19,15 +26,25 @@
                                 <th>Prix</th>
                                 <th>Réservoir</th>
                                 <th>Charge utile</th>
-                                <th>Kilometrage</th>
-                            </tr>
+                                <th>Kilométrage</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($camions as $camion): ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($camion['numTracteurCamion']) ?></td>
+                                    <td><?= htmlspecialchars($camion['numRemorqueCamion']) ?></td>
+                                    <td><?= htmlspecialchars($camion['marqueCamion']) ?></td>
+                                    <td><?= htmlspecialchars($camion['typeCamion']) ?></td>
+                                    <td><?= htmlspecialchars($camion['prixDuCamion']) ?></td>
+                                    <td><?= htmlspecialchars($camion['reservoirCamion']) ?></td>
+                                    <td><?= htmlspecialchars($camion['capaciteCamion']) ?></td>
+                                    <td><?= htmlspecialchars($camion['kilometrageCamion']) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
                                 <th>Numéro</th>
                                 <th>Remorque</th>
                                 <th>Marque</th>
@@ -35,13 +52,12 @@
                                 <th>Prix</th>
                                 <th>Réservoir</th>
                                 <th>Charge utile</th>
-                                <th>Kilometrage</th>
+                                <th>Kilométrage</th>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </div>
-            
         </div>
     </div>
     <!-- /.card-body -->

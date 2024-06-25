@@ -5,6 +5,7 @@
   if (isset($_GET['ind'])) {
     $_SESSION['ind'] = $_GET['ind'];
   }
+  else $_SESSION['ind'] = '';
 ?>
 
 <div class="content-wrapper" style="min-height: 1345.6px;">

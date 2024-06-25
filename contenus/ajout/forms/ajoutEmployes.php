@@ -1,24 +1,33 @@
+<?php
+    include("controler/bdd.php");
+    $db = new Database();
+
+    $camions = $db->getAllCamions();
+
+    $db->close();
+?>
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Ajout d'un nouvel employé</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form method="POST" action="">
+    <form method="POST" action="controler/CEmploye.php?action=ajout">
         <div class="card-body">
 
             <div class="form-group">
                 <label>Camion</label>
                 <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1"
-                    tabindex="-1" aria-hidden="true" aria-placeholder="id du camion">
-                    <!-- <option selected="selected" data-select2-id="3">Chauffeur</option>
-                    <option data-select2-id="33">Aide chauffeur</option> -->
+                    tabindex="-1" aria-hidden="true" aria-placeholder="id du camion" name="numTracteurCamion" required>
+                    <?php foreach ($camions as $camion): ?>
+                        <option value="<?= htmlspecialchars($camion['numTracteurCamion']) ?>"><?= htmlspecialchars($camion['numTracteurCamion']) ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-group">
                 <label>Poste</label>
                 <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1"
-                    tabindex="-1" aria-hidden="true">
+                    tabindex="-1" aria-hidden="true" name="poste">
                     <option selected="selected" data-select2-id="3">Chauffeur</option>
                     <option data-select2-id="33">Aide chauffeur</option>
                 </select>
@@ -27,7 +36,7 @@
             <div class="form-group">
                 <label for="nomE">Nom</label>
                 <input type="text" class="form-control" id="nomE" placeholder="Nom de l'employé"
-                    name="nomE">
+                    name="nomE" required>
             </div>
             <div class="form-group">
                 <label for="prenomE">Prenom</label>
